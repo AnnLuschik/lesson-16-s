@@ -102,3 +102,65 @@ while(true) {
 }
 
 console.log(getPartOfString(userString, startIndex, endIndex));
+
+// Task 3
+
+function createPerson() {
+    let person = {};
+
+    person.firstName = prompt('Введите своё имя');
+    person.surname = prompt('Введите свою фамилию');
+    person.age = +prompt('Укажите свой возраст');
+
+    person.addSpouse = function() {
+        let existSpouse = prompt('Есть ли супруг? Да / нет');
+        while(true) {
+            if (existSpouse.toLowerCase() === 'да') {
+                existSpouse = true;
+                break;
+            } else if(existSpouse.toLowerCase() === 'нет') {
+                existSpouse = false;
+                break;
+            } else existSpouse = prompt('Выберите из вариантов "да" и "нет".')
+        }
+        if(existSpouse) {
+            this.spouse = {};
+            this.spouse.name = prompt('Введите имя супруга');
+            this.spouse.surname = prompt('Введите фамилию супруга');
+            this.spouse.age = +prompt('Укажите возраст супруга');
+        } 
+    }
+    
+    person.addSpouse();
+    
+    person.addChild = function() {
+        let existChild = prompt('Есть ли дети? Да / нет');
+        while(true) {
+            if (existChild.toLowerCase() === 'да') {
+                existChild = true;
+                break;
+            } else if(existChild.toLowerCase() === 'нет') {
+                existChild = false;
+                break;
+            } else existChild = prompt('Выберите из вариантов "да" и "нет".')
+        }
+        if(existChild) {
+            this.children = [];
+            let number = +prompt('Сколько у Вас детей?');
+            for (let i = 0; i < number; i++) {
+                let child = {};
+                child.name = prompt('Введите имя ребёнка');
+                child.age = +prompt('Введите возраст ребёнка');
+                this.children.push(child);
+            }
+        }
+    }
+
+    person.addChild();
+
+    person.profession = prompt('Кто Вы по профессии?');
+
+    return person;
+}
+person = createPerson();
+console.log(person);
