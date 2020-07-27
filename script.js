@@ -1,8 +1,8 @@
-// Task 1
+// // Task 1
 let array = [];
 
 function changeArray(number, index) {
-    for(let i = 0; i < number; i++) {
+    while(array.length < number) {
         array.push(+prompt('Введите число'));
     }
 
@@ -162,5 +162,7 @@ function createPerson() {
 
     return person;
 }
+
 person = createPerson();
 console.log(person);
+
