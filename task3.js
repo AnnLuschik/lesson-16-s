@@ -9,10 +9,8 @@ function createPerson() {
         let married = prompt('Вы состоите в браке? Да / нет');
         if (married.toLowerCase() === 'да') {
             married = true;
-            break;
         } else if(married.toLowerCase() === 'нет') {
             married = false;
-            break;
         } else married = prompt('Выберите из вариантов "да" и "нет".');  
 
         if(married) {
@@ -29,10 +27,8 @@ function createPerson() {
         let parent = prompt('Есть ли дети? Да / нет');
         if (parent.toLowerCase() === 'да') {
             parent = true;
-            break;
         } else if(parent.toLowerCase() === 'нет') {
             parent = false;
-            break;
         } else parent = prompt('Выберите из вариантов "да" и "нет".')
            
         if(parent) {

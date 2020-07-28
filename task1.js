@@ -27,7 +27,6 @@ if (number.match(/\D/gu)) {
     number = prompt('Необходимо ввести число');
 } else {
     number = +number;
-    break;
 };    
 
 let index = prompt('Укажите коэффициент изменения массива');
@@ -37,8 +36,7 @@ if (index.match(/\D/gu) || index == 0) {
     index = prompt('Необходимо ввести положительное число');
 } else {
     index = +index;
-    break;
-};
+}
 
 console.log(array);
 array = changeArray(number, index);

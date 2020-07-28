@@ -47,7 +47,6 @@ let increasedArray = getDoubleUpAArray(sortedArrayObject.numberArray);
 let invertedArray = getInvertedArray(sortedArrayObject.booleanArray);
 let stringReplacedArray = getChangeLettersArray(sortedArrayObject.stringArray);
 
-console.log(sortedArrayObject);
 console.log(increasedArray);
 console.log(invertedArray);
 console.log(stringReplacedArray);
