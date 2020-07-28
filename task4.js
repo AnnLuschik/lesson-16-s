@@ -1,6 +1,4 @@
-// Не окончено. Уточнить, каким образом выводить массивы..
-
-let data= [
+let data = [
     'молоко', 
     34, 
     717, 
@@ -24,22 +22,33 @@ function sortArray(array) {
     let booleanArray = array.filter(item => typeof item === 'boolean');
     let undefinedArray = array.filter(item => typeof item === 'undefined');
     let objectArray = array.filter(item => typeof item === 'object');
-    return [numberArray, stringArray, booleanArray, undefinedArray, objectArray];
+    return {numberArray, stringArray, booleanArray, undefinedArray, objectArray};
 }
 
-function doubleUp(array) {
-    array.map(item => item *= 2);
-    return array;
+function getDoubleUpAArray(array) {
+    return array.map(item => item * 2);
 }
 
-function invertArray(booleanArray ) {
-    booleanArray.map(item => !item);
+function getInvertedArray(booleanArray) {
+    return booleanArray.map(item => !item);
 }
 
-let masArray = sortArray(data);
+function getChangeLettersArray(array) {
+    return array.map(function(item) {
+        if(item.match(/о/)) {
+            item = item.split('о');
+            return item = item.join('л');
+        } return item;
+    });
+}
 
-console.log(masArray);
+let sortedArrayObject = sortArray(data);
+let increasedArray = getDoubleUpAArray(sortedArrayObject.numberArray);
+let invertedArray = getInvertedArray(sortedArrayObject.booleanArray);
+let stringReplacedArray = getChangeLettersArray(sortedArrayObject.stringArray);
 
-let newNumberArray = doubleUp(numberArray);
+console.log(sortedArrayObject);
+console.log(increasedArray);
+console.log(invertedArray);
+console.log(stringReplacedArray);
 
-console.log(newNumberArray);
