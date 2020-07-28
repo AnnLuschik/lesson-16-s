@@ -7,15 +7,14 @@ function createPerson() {
 
     person.addSpouse = function() {
         let married = prompt('Вы состоите в браке? Да / нет');
-        while(true) {
-            if (married.toLowerCase() === 'да') {
-                married = true;
-                break;
-            } else if(married.toLowerCase() === 'нет') {
-                married = false;
-                break;
-            } else married = prompt('Выберите из вариантов "да" и "нет".')
-        }
+        if (married.toLowerCase() === 'да') {
+            married = true;
+            break;
+        } else if(married.toLowerCase() === 'нет') {
+            married = false;
+            break;
+        } else married = prompt('Выберите из вариантов "да" и "нет".');  
+
         if(married) {
             this.spouse = {};
             this.spouse.name = prompt('Введите имя супруга');
@@ -28,15 +27,14 @@ function createPerson() {
     
     person.addChild = function() {
         let parent = prompt('Есть ли дети? Да / нет');
-        while(true) {
-            if (parent.toLowerCase() === 'да') {
-                parent = true;
-                break;
-            } else if(parent.toLowerCase() === 'нет') {
-                parent = false;
-                break;
-            } else parent = prompt('Выберите из вариантов "да" и "нет".')
-        }
+        if (parent.toLowerCase() === 'да') {
+            parent = true;
+            break;
+        } else if(parent.toLowerCase() === 'нет') {
+            parent = false;
+            break;
+        } else parent = prompt('Выберите из вариантов "да" и "нет".')
+           
         if(parent) {
             this.children = [];
             let number = +prompt('Сколько у Вас детей?');
@@ -47,11 +45,8 @@ function createPerson() {
             }
         }
     }
-
     person.addChild();
-
     person.profession = prompt('Кто Вы по профессии?');
-
     return person;
 }
 
