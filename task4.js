@@ -16,13 +16,24 @@ let data = [
     false
 ];
 
+let numberArray = [];
+let stringArray = [];
+let booleanArray = [];
+
 function sortArray(array) {
-    let numberArray = array.filter(item => typeof item === 'number');
-    let stringArray = array.filter(item => typeof item === 'string');
-    let booleanArray = array.filter(item => typeof item === 'boolean');
-    let undefinedArray = array.filter(item => typeof item === 'undefined');
-    let objectArray = array.filter(item => typeof item === 'object');
-    return {numberArray, stringArray, booleanArray, undefinedArray, objectArray};
+    for (let item of array) {
+        switch (typeof item) {
+            case 'number': 
+                numberArray.push(item);
+                break;
+            case 'boolean':
+                booleanArray.push(item);
+                break;
+            case 'string':
+                stringArray.push(item);
+                break;
+        }
+    }
 }
 
 function getDoubleUpAArray(array) {
@@ -42,10 +53,11 @@ function getChangeLettersArray(array) {
     });
 }
 
-let sortedArrayObject = sortArray(data);
-let increasedArray = getDoubleUpAArray(sortedArrayObject.numberArray);
-let invertedArray = getInvertedArray(sortedArrayObject.booleanArray);
-let stringReplacedArray = getChangeLettersArray(sortedArrayObject.stringArray);
+sortArray(data);
+
+let increasedArray = getDoubleUpAArray(numberArray);
+let invertedArray = getInvertedArray(booleanArray);
+let stringReplacedArray = getChangeLettersArray(stringArray);
 
 console.log(increasedArray);
 console.log(invertedArray);
