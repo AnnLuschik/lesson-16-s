@@ -29,23 +29,20 @@ let userString = prompt('Напишите что-нибудь длинное');
 
 let startIndex = prompt('Укажите начало диапазона для извлечения. Нумерация начинается с 0.');
 
-while(true) {
-    if (startIndex.match(/\D/gu)) {
-        startIndex = prompt('Необходимо ввести число');
-    } else {
-        startIndex = +startIndex;
-        break;
-    };
-}
+if (startIndex.match(/\D/gu)) {
+    startIndex = prompt('Необходимо ввести число');
+} else {
+    startIndex = +startIndex;
+    break;
+};
 
 let endIndex = prompt('Укажите конец диапазона для извлечения. Нумерация начинается с 0.');
-while(true) {
-    if (endIndex.match(/\D/gu)) {
-        endIndex = prompt('Необходимо ввести число');
-    } else {
-        endIndex = +endIndex;
-        break;
-    };
-}
+
+if (endIndex.match(/\D/gu)) {
+    endIndex = prompt('Необходимо ввести число');
+} else {
+    endIndex = +endIndex;
+    break;
+};    
 
 console.log(getPartOfString(userString, startIndex, endIndex));
