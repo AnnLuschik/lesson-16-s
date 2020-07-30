@@ -17,8 +17,11 @@ let family = {
             } 
         }
         this.oldestFamilyMember = oldestPerson;
+        return this.oldestFamilyMember;
     }
 }
 
 family.addOldestPerson();
 console.log(family);
+
+console.log(family.addOldestPerson());
